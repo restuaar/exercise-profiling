@@ -26,11 +26,17 @@ public class StudentController {
         List<StudentCourse> studentCourses = studentService.getAllStudentsWithCourses();
         return ResponseEntity.ok(studentCourses.toString());
     }
+
     @GetMapping("/highest-gpa")
     public ResponseEntity<String> highestGpa() {
         Optional<Student> studentWithHighestGpa = studentService.findStudentWithHighestGpa();
-        return ResponseEntity.ok(studentWithHighestGpa.get().toString());
+        String student = "Empty";
+        if (studentWithHighestGpa.isPresent()) {
+            student = studentWithHighestGpa.get().toString();
+        }
+        return ResponseEntity.ok(student);
     }
+
     @GetMapping("/all-student-name")
     public ResponseEntity<String> allStudentName() {
         String joinedStudentNames = studentService.joinStudentNames();
