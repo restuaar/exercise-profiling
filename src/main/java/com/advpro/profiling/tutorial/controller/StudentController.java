@@ -2,7 +2,6 @@ package com.advpro.profiling.tutorial.controller;
 
 import com.advpro.profiling.tutorial.model.Student;
 import com.advpro.profiling.tutorial.model.StudentCourse;
-import com.advpro.profiling.tutorial.service.DataSeedService;
 import com.advpro.profiling.tutorial.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
